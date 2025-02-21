@@ -1,0 +1,11 @@
+### POST request to example server
+POST
+Create Quiz
+http://localhost:8080/quiz/create?category=java&numQuestions=5&title=JQuiz
+
+Query Params
+category java
+numQuestions 5
+title JQuiz
+
+###

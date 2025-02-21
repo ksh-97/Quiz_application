@@ -1,0 +1,22 @@
+### POST request to example server
+
+POST
+http://localhost:8080/question/add
+
+Request Headers
+Content-Type : application/json
+
+
+Body - raw (json)
+
+{
+    "questionTitle": "Maximum short value in Java",
+    "option1": "4",
+    "option2": "5",
+    "option3": "6",
+    "option4": "Error",
+    "rightAnswer": "5",
+    "difficultyLevel": "Easy",
+    "category": "java"
+}
+###

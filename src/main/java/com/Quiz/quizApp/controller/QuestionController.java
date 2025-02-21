@@ -1,8 +1,9 @@
 package com.Quiz.quizApp.controller;
 
-import com.Quiz.quizApp.Question;
+import com.Quiz.quizApp.model.Question;
 import com.Quiz.quizApp.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class QuestionController {
     QuestionService questionService;
 
     @GetMapping("allQuestions")
-    public List<Question> getAllQuestions() {
+    public ResponseEntity<List<Question>> getAllQuestions() {
         return questionService.getAllQuestions();
     }
 
@@ -25,13 +26,16 @@ public class QuestionController {
     }
 
     @GetMapping("category/{catname}")
-    public List<Question> getQuestionsByCategory(@PathVariable String catname) {
+    public ResponseEntity<List<Question>> getQuestionsByCategory(@PathVariable String catname) {
         return questionService.getQuestionsByCategory(catname);
     }
 
+    //Adding a new question
     @PostMapping("add")
-    public String addQuestion(@RequestBody Question question) {
+    public ResponseEntity<String> addQuestion(@RequestBody Question question) {
         System.out.println(question);
         return questionService.addQuestion(question);
     }
+
+
 }
